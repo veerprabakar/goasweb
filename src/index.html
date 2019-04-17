@@ -14,21 +14,39 @@
       result => {
         mod = result.module;
         inst = result.instance;
-        document.getElementById("runButton").disabled = false;
+        go.run(inst);
       }
     );
 
-    async function run() {
-      await go.run(inst);
-      inst = await WebAssembly.instantiate(mod, go.importObject); // reset instance
-    }			
+    function calc(op) {
+      let v1 = Number(document.getElementById("val1").value);
+      let v2 = Number(document.getElementById("val2").value);
+
+      if(op === '+') {  
+        let result = add(v1, v2);
+      } else if (op === '-') {
+        let result = sub(v1, v2);
+      } else if (op === '*') {
+        let result = mul(v1, v2);
+      } else if (op === '/') {
+        let result = div(v1, v2);
+      }
+    }
   </script>
 
 </head>
 <body>
   <h1>Go as WASM</h1>
-  <button onClick="run();" id="runButton" disabled>Run</button>
-  <button onClick="add();" id="runButton">Add</button>
+  <h2>Calc sample</h2>
+  <input type="text" id="val1" />
+  <input type="text" id="val2" />
 
+  <br />
+  <br />
+  <button onClick="calc('+');">+</button>
+  <button onClick="calc('-');">-</button>
+  <button onClick="calc('*');">*</button>
+  <button onClick="calc('/');">/</button>
+  
 </body>
 </html>

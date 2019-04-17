@@ -1,1 +1,1 @@
-GOARCH=wasm GOOS=js go build -o main.wasm main.go
+GOARCH=wasm GOOS=js go build -o ../../public/main.wasm main.go
