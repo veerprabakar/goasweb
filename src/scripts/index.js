@@ -23,12 +23,12 @@ window.calc = function(op) {
 
     // call the GO calc
     if (op === '+') {
-        let result = add(v1, v2);
+        add(v1, v2);
     } else if (op === '-') {
-        let result = sub(v1, v2);
+        sub(v1, v2);
     } else if (op === '*') {
-        let result = mul(v1, v2);
+        mul(v1, v2);
     } else if (op === '/') {
-        let result = div(v1, v2);
+        div(v1, v2);
     }
 }
