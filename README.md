@@ -1,1 +1,1 @@
-WebAssembly sample with GO
+Simple Calculator example with Go and WebAssembly
